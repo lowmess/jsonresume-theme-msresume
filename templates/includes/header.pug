@@ -1,0 +1,27 @@
+header.pa4.bg-primary.accent-text
+  h1.f2.f1-ns.mt0.mb3= resume.basics.name
+
+  .column-layout
+    ul.list.ml0.pl0.mt0.mb2.mb0-ns.f5
+      if resume.basics.email
+        li: a.link.accent-text.underline-hover(href=`mailto:${resume.basics.email}`)= resume.basics.email
+
+      if resume.basics.phone
+        li: a.link.accent-text.underline-hover(href=`tel:${resume.basics.phone}`)= resume.basics.phone
+
+      if resume.basics.location
+        li
+          = resume.basics.location.city
+          | ,#{' '}
+          = resume.basics.location.region
+
+      if resume.basics.website
+        li: a.link.accent-text.underline-hover(href=resume.basics.website)= resume.basics.website
+
+      if resume.basics.profiles
+        each profile in resume.basics.profiles
+          li: a.link.accent-text.underline-hover(href=profile.url)= profile.username
+
+    div
+      if resume.basics.summary
+        p.measure.mv0.f5= resume.basics.summary

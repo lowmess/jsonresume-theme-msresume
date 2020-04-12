@@ -1,0 +1,25 @@
+section.mb5.mb3-p
+  h2.f5.fw7.mt2.mb3.ttu.accent Education
+
+  - for (var index = 0; index < 1; index++)
+    - const edu = resume.education[index]
+
+    div.mb4.mb3-p
+      h3.f3.mt0.mb2.mb0-p.fw6 #{edu.studyType}, #{edu.area}
+
+      .column-layout
+        ul.list.mv0.ml0.pl0.f5.fw2
+          if edu.institution
+            li.fw5= edu.institution
+
+          li
+            time(datetime=new Date(edu.startDate).toISOString())= formatDate(new Date(edu.startDate), 'MMM yyyy')
+            | &#032;&ndash;&#032;
+            if (edu.endDate)
+              time(datetime=new Date(edu.endDate).toISOString())= formatDate(new Date(edu.endDate), 'MMM yyyy')
+            else
+              span Present
+
+        if edu.summary
+          p.measure.f5.mv0= edu.summary
+

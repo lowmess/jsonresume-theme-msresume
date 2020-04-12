@@ -1,0 +1,15 @@
+.page.mw-page.mv-5-page.center.ma0-p.shadow-2-page.lh-title
+  include header.pug
+
+  main.pa4.bg-white
+    include work.pug
+    include education.pug
+
+    if resume.skills.length
+      section
+        .column-layout
+          h2.f5.fw7.mv0.ttu.accent Proficiencies
+
+          ul.cc2-ns.cg3-ns.cc2-p.cg3-p.pl0.mv0.list-inside-ns.list-inside-p
+            - for(var index = 0; index < resume.skills.length; index++)
+              li= resume.skills[index].name

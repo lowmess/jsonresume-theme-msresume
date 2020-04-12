@@ -1,0 +1,30 @@
+section.mb5.mb3-p
+  h2.f5.fw7.mt0.mb3.ttu.accent Experience
+
+  - const limit = Math.min(resume.work.length, 3)
+  - for (var index = 0; index < limit; index++)
+    - const exp = resume.work[index]
+    - const title = exp.position ? exp.position : exp.company
+
+    div.mb4.mb3-p
+      h3.f3.mt0.mb2.mb0-p.fw6= title
+
+      .column-layout
+        ul.list.mv0.ml0.pl0.f5.fw2
+          if exp.position && exp.company
+            li.fw5
+              if exp.website
+                a.link.dark-gray.underline-hover(href=exp.website)= exp.company
+              else
+                = exp.company
+
+          li
+            time(datetime=new Date(exp.startDate).toISOString())= formatDate(new Date(exp.startDate), 'MMM yyyy')
+            | &#032;&ndash;&#032;
+            if (exp.endDate)
+              time(datetime=new Date(exp.endDate).toISOString())= formatDate(new Date(exp.endDate), 'MMM yyyy')
+            else
+              span Present
+
+        if exp.summary
+          p.measure.f5.mv0= exp.summary
