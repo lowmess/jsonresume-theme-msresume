@@ -1,3 +1,3 @@
-# JSONResume Theme lowmess
+# JSONResume Theme MSResume
 
-It's dumb i have to publish this but w/e
+Theme based on the deprecated [Metalsmith Resume](https://github.com/lowmess/metalsmith-resume) project.
