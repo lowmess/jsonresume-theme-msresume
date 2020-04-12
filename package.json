@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-msresume",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "JSONResume Theme based on Metalsmith Resume",
   "main": "index.js",
   "scripts": {
